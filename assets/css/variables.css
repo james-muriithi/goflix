@@ -1,0 +1,35 @@
+:root {
+  --h1size: 42px;
+  --h2size: 35px;
+  --h3size: 22px;
+  --h4size: 18px;
+  --h5size: 16px;
+  --bodysize: 16px;
+  --h1height: 50px;
+  --h2height: 42px;
+  --h3height: 30px;
+  --h4height: 26px;
+  --h5height: 20px;
+  --bodyheight: 26px;
+  --pfamily: 'Lato', sans-serif;
+  --body: #131720;
+  --text: #555555;
+  --gray: #f5f5f5;
+  --white: #ffffff;
+  --border: #e8e8e8;
+  --primary: #8740dd;
+  --heading: #232d3b;
+  --star: #ff9c07;
+  --remove: #dd3838;
+  --dark-light: #cccccc;
+  --placeholder: #f2f2f2;
+  --placeholder-color: #151f30;
+  --primary-hover: #d3afff;
+  --primary-light: #eef7ff;
+  --edit-bg: #aaffdd;
+  --edit-color: #11af70;
+  --delete-bg: #ffdddd;
+  --delete-color: #ff3333;
+  --primary-bshadow: 0px 10px 25px 0px rgba(0, 0, 0, 0.1);
+  --primary-tshadow: 2px 3px 8px rgba(0, 0, 0, 0.1);
+}
