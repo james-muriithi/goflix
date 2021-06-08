@@ -55,6 +55,7 @@ export default {
   plugins: [
     // { src: '@/assets/js/main.js', ssr: false },
     { src: '@/plugins/owl.js', ssr: false },
+    { src: '@/plugins/global-components.js'},
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components

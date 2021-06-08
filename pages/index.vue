@@ -1,15 +1,18 @@
 <template>
   <div class="home home--static">
     <home-carousel />
+    <home-catalog />
   </div>
 </template>
 
 <script>
 import HomeCarousel from '@/components/Home/HomeCarousel.vue'
+import HomeCatalog from '@/components/Home/HomeCatalog.vue'
 
 export default {
   components: {
     HomeCarousel,
+    HomeCatalog,
   },
 }
 </script>

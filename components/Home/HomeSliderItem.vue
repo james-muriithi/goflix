@@ -1,35 +1,24 @@
 <template>
   <div class="home__card">
-    <a :href="url" :title="title">
+    <nuxt-link :to="url" :aria-label="title">
       <img :src="thumbnail" :alt="title" />
-    </a>
+    </nuxt-link>
     <div>
       <h2>{{ title }}</h2>
       <ul>
-        <li>Action</li>
+        <li v-if="genre">{{ genre }}</li>
         <li>2021</li>
       </ul>
     </div>
-    <button class="home__add" type="button">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-        <path
-          d="M16,2H8A3,3,0,0,0,5,5V21a1,1,0,0,0,.5.87,1,1,0,0,0,1,0L12,18.69l5.5,3.18A1,1,0,0,0,18,22a1,1,0,0,0,.5-.13A1,1,0,0,0,19,21V5A3,3,0,0,0,16,2Zm1,17.27-4.5-2.6a1,1,0,0,0-1,0L7,19.27V5A1,1,0,0,1,8,4h8a1,1,0,0,1,1,1Z"
-        />
-      </svg>
-    </button>
-    <span v-if="rating" class="home__rating"
-      ><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-        <path
-          d="M22,9.67A1,1,0,0,0,21.14,9l-5.69-.83L12.9,3a1,1,0,0,0-1.8,0L8.55,8.16,2.86,9a1,1,0,0,0-.81.68,1,1,0,0,0,.25,1l4.13,4-1,5.68A1,1,0,0,0,6.9,21.44L12,18.77l5.1,2.67a.93.93,0,0,0,.46.12,1,1,0,0,0,.59-.19,1,1,0,0,0,.4-1l-1-5.68,4.13-4A1,1,0,0,0,22,9.67Zm-6.15,4a1,1,0,0,0-.29.88l.72,4.2-3.76-2a1.06,1.06,0,0,0-.94,0l-3.76,2,.72-4.2a1,1,0,0,0-.29-.88l-3-3,4.21-.61a1,1,0,0,0,.76-.55L12,5.7l1.88,3.82a1,1,0,0,0,.76.55l4.21.61Z"
-        />
-      </svg>
-      {{ rating }}</span
-    >
+    <bookmark />
+    <rating v-if="rating" :value="rating" />
   </div>
 </template>
 
 <script>
+import Rating from '../UI/Rating.vue'
 export default {
+  components: { Rating },
   props: {
     title: {
       type: String,
@@ -47,6 +36,10 @@ export default {
       type: Number,
       required: false,
       default: null,
+    },
+    genre: {
+      type: String,
+      default: 'Action',
     },
   },
   computed: {
@@ -146,64 +139,6 @@ export default {
 .home__card:hover .home__rating {
   opacity: 1;
   transform: scale(1);
-}
-.home__add {
-  position: absolute;
-  top: 20px;
-  left: 20px;
-  z-index: 3;
-  transition: 0.5s;
-  opacity: 0;
-  pointer-events: none;
-  width: 30px;
-  height: 30px;
-  border-radius: 10px;
-  background-color: #151f30;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  transform: scale(0.8);
-}
-.home__add svg {
-  width: 18px;
-  height: auto;
-  fill: #2f80ed;
-  transition: fill 0.5s;
-}
-.home__add:hover svg,
-.home__add.active svg {
-  fill: #ffc312;
-}
-.home__rating {
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  align-items: center;
-  position: absolute;
-  top: 20px;
-  right: 20px;
-  z-index: 3;
-  transition: 0.5s;
-  opacity: 0;
-  pointer-events: none;
-  height: 30px;
-  width: auto;
-  padding: 0 10px;
-  transform: scale(0.8);
-  border-radius: 10px;
-  background-color: rgba(21, 31, 48, 0.75);
-  color: #fff;
-  font-size: 12px;
-  font-weight: 500;
-  cursor: default;
-}
-.home__rating svg {
-  width: 16px;
-  height: auto;
-  fill: #2f80ed;
-  transition: fill 0.5s;
-  margin-right: 5px;
 }
 .home__nav {
   display: none;
