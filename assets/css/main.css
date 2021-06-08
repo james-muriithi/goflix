@@ -90,14 +90,15 @@ ul {
   outline: -webkit-focus-ring-color auto 0px;
 }
 body::-webkit-scrollbar {
-  width: 16px;
+  width: 8px;
 }
 body::-webkit-scrollbar-track {
   background: var(--placeholder-color);
 }
 body::-webkit-scrollbar-thumb {
-  background-color: #2f80ed;
+  background-color: var(--scrollbar-thumb);
   outline: 1px solid var(--placeholder-color);
+  border-radius: 5px;
 }
 @media (min-width: 1440px) {
   .container {

@@ -1,3 +1,5 @@
+const webpack = require('webpack')
+
 export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
@@ -10,6 +12,7 @@ export default {
     ],
     link: [
       { rel: 'preconnect', href: 'https://fonts.gstatic.com' },
+      { rel: 'preconnect', href: 'https://cdnjs.cloudflare.com' },
       {
         rel: 'stylesheet',
         href: 'https://fonts.googleapis.com/css2?family=Inter:wght@400;500&amp;family=Rubik:ital,wght@0,300;0,400;0,500;1,400&amp;display=swap',
@@ -17,6 +20,10 @@ export default {
       {
         rel: 'stylesheet',
         href: 'https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css',
+      },
+      {
+        rel: 'stylesheet',
+        href: 'https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css',
       },
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
       {
@@ -38,13 +45,23 @@ export default {
       },
       { rel: 'manifest', href: '/site.webmanifest' },
     ],
+    script: [
+      {
+        src: 'https://code.jquery.com/jquery-3.6.0.slim.min.js',
+        type: 'text/javascript',
+      },
+      {
+        src: 'https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js',
+        type: 'text/javascript',
+      },
+    ],
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: ['@/assets/css/variables.css', '@/assets/css/main.css'],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
-  plugins: [],
+  plugins: [{ src: '@/assets/js/main.js', ssr: false }],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,
@@ -74,5 +91,18 @@ export default {
   },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
-  build: {},
+  build: {
+    vendor: ['jquery', 'owl.carousel'],
+    plugins: [
+      new webpack.ProvidePlugin({
+        $: 'jquery',
+        jQuery: 'jquery',
+        'window.jQuery': 'jquery',
+      }),
+      new webpack.ProvidePlugin({
+        owlCarousel: 'owl.carousel',
+        'window.owlCarousel': 'owl.carousel',
+      }),
+    ],
+  },
 }
