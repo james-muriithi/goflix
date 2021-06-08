@@ -21,10 +21,6 @@ export default {
         rel: 'stylesheet',
         href: 'https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css',
       },
-      {
-        rel: 'stylesheet',
-        href: 'https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css',
-      },
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
       {
         rel: 'apple-touch-icon',
@@ -45,23 +41,21 @@ export default {
       },
       { rel: 'manifest', href: '/site.webmanifest' },
     ],
-    script: [
-      {
-        src: 'https://code.jquery.com/jquery-3.6.0.slim.min.js',
-        type: 'text/javascript',
-      },
-      {
-        src: 'https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js',
-        type: 'text/javascript',
-      },
-    ],
+    // script: [
+    //   {
+    //     src: 'https://code.jquery.com/jquery-3.6.0.slim.min.js',
+    //     type: 'text/javascript',
+    //   },
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: ['@/assets/css/variables.css', '@/assets/css/main.css'],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
-  plugins: [{ src: '@/assets/js/main.js', ssr: false }],
+  plugins: [
+    // { src: '@/assets/js/main.js', ssr: false },
+    { src: '@/plugins/owl.js', ssr: false },
+  ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,
@@ -91,18 +85,5 @@ export default {
   },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
-  build: {
-    vendor: ['jquery', 'owl.carousel'],
-    plugins: [
-      new webpack.ProvidePlugin({
-        $: 'jquery',
-        jQuery: 'jquery',
-        'window.jQuery': 'jquery',
-      }),
-      new webpack.ProvidePlugin({
-        owlCarousel: 'owl.carousel',
-        'window.owlCarousel': 'owl.carousel',
-      }),
-    ],
-  },
+  build: {},
 }
