@@ -15,21 +15,7 @@ export default {
     HomeCatalog,
   },
   head() {
-    return {
-      link: [
-        {
-          hid: 'select2',
-          rel: 'stylesheet',
-          href: 'https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/css/select2.min.css',
-        },
-      ],
-      script: [
-        {
-          src: 'https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js',
-          type: 'text/javascript',
-        },
-      ],
-    }
+    return {}
   },
 }
 </script>
@@ -37,7 +23,7 @@ export default {
 <style scoped>
 .home {
   position: relative;
-  margin-top: 80px;
+  margin-top: 90px;
 }
 @media (min-width: 1200px) {
   .home {

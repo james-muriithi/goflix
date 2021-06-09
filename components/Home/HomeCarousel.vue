@@ -3,7 +3,7 @@
     <client-only>
       <carousel
         id="flixtv-hero"
-        class="home__carousel owl-carouseal"
+        class="home__carousel"
         :mouse-drag="true"
         :touch-drag="true"
         :dots="true"
@@ -11,7 +11,7 @@
         :autoplay="false"
         :smart-speed="600"
         :margin="20"
-        :auto-height="true"
+        :auto-height="false"
         :auto-width="true"
         :responsive="{
           0: {
@@ -179,5 +179,11 @@ export default {
   .home__carousel .owl-dots {
     padding-left: calc((100vw - 1240px) / 2);
   }
+}
+</style>
+
+<style>
+.owl-stage-outer.owl-height {
+  /* min-height: 256px; */
 }
 </style>
