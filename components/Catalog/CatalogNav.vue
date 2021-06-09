@@ -1,6 +1,6 @@
 <template>
   <div class="catalog__nav">
-    <div class="catalog__select-wrap">
+    <div class="catalog__select-wrap d-none">
       <select class="catalog__select" name="genres">
         <option value="All genres">All genres</option>
         <option value="Action/Adventure">Action/Adventure</option>

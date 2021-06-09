@@ -16,6 +16,7 @@ export default {
         href: 'https://fonts.googleapis.com/css2?family=Inter:wght@400;500&amp;family=Rubik:ital,wght@0,300;0,400;0,500;1,400&amp;display=swap',
       },
       {
+        hid: 'bootstrap',
         rel: 'stylesheet',
         href: 'https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css',
       },

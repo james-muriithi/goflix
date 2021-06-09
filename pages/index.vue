@@ -14,6 +14,23 @@ export default {
     HomeCarousel,
     HomeCatalog,
   },
+  head() {
+    return {
+      link: [
+        {
+          hid: 'select2',
+          rel: 'stylesheet',
+          href: 'https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/css/select2.min.css',
+        },
+      ],
+      script: [
+        {
+          src: 'https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js',
+          type: 'text/javascript',
+        },
+      ],
+    }
+  },
 }
 </script>
 
