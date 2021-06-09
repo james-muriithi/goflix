@@ -1,5 +1,3 @@
-const webpack = require('webpack')
-
 export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
@@ -55,7 +53,7 @@ export default {
   plugins: [
     // { src: '@/assets/js/main.js', ssr: false },
     { src: '@/plugins/owl.js', ssr: false },
-    { src: '@/plugins/global-components.js'},
+    { src: '@/plugins/global-components.js' },
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
