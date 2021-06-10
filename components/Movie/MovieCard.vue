@@ -1,6 +1,6 @@
 <template>
   <card>
-    <a href="details.html" class="card__cover">
+    <nuxt-link to="details.html" class="card__cover">
       <img src="@/assets/images/2.jpg" alt="" />
       <svg
         width="22"
@@ -24,7 +24,7 @@
           stroke-linejoin="round"
         />
       </svg>
-    </a>
+    </nuxt-link>
     <bookmark />
 
     <rating :value="8.3" />

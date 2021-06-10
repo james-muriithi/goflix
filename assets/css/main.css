@@ -124,6 +124,11 @@ body::-webkit-scrollbar-thumb {
 .fade {
   transition: opacity 0.4s linear;
 }
+.section--full-bg {
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
 @media screen and (prefers-reduced-motion: reduce) {
   .fade {
     transition: none;

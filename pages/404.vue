@@ -90,10 +90,4 @@
     padding: 40px;
   }
 }
-
-.section--full-bg {
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-size: cover;
-}
 </style>
