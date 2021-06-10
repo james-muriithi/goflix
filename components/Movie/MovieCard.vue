@@ -1,6 +1,6 @@
 <template>
   <card>
-    <nuxt-link to="details.html" class="card__cover">
+    <nuxt-link :to="url" class="card__cover">
       <img src="@/assets/images/2.jpg" alt="" />
       <svg
         width="22"
@@ -29,7 +29,7 @@
 
     <rating :value="8.3" />
     <h3 class="card__title">
-      <a href="details.html">The Good Lord Bird</a>
+      <nuxt-link :to="url">{{ title }}</nuxt-link>
     </h3>
     <ul class="card__list">
       <li>Free</li>
@@ -38,6 +38,22 @@
     </ul>
   </card>
 </template>
+
+<script>
+export default {
+  data() {
+    return {
+      title: 'The Good Lord Bird',
+      id: '1',
+    }
+  },
+  computed: {
+    url() {
+      return `/movie/${this.id}`
+    },
+  },
+}
+</script>
 
 <style scoped>
 .card__cover img {

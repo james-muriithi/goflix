@@ -14,5 +14,15 @@ export default {
     MovieDetails,
     SimilarMovies,
   },
+  data() {
+    return {
+      title: 'Fast and Furious 9',
+    }
+  },
+  head() {
+    return {
+      title: `Goflix | Watch ${this.title}`,
+    }
+  },
 }
 </script>

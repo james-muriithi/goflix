@@ -44,7 +44,7 @@ export default {
   },
   computed: {
     url() {
-      return '#'
+      return `/movie/${this.id}`
     },
   },
 }
